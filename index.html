@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elías Espínola | Portafolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('you fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      padding: 30px;
+    }
+
+    /* Capa oscura encima del fondo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.644);
+      z-index: 0;
+    }
+    img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 28px;
+      color: #ffffff;
+    }
+
+    p {
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .link-button {
+      display: block;
+      background: #0077ff9d;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .link-button:hover {
+      transform: scale(1.05);
+      background: #005edb;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" data-aos="fade-up">
+    <img src="yo mborex.jpg" alt="Foto de Elías">
+    <h1>PROYECTOS</h1>
+    <p>Creador digital | Emprendedor</p>
+
+    <a href="sobre mi.html" class="link-button" data-aos="zoom-in-down" data-aos-delay="750">👤 Sobre mí</a>
+    <a href="https://maluco-stack.github.io/maluco/prendas.html" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="0">🧢 Ver Tienda Maluco</a>
+    <a href="https://fllcelulares.github.io/FLLL/" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="150">📱 Ver FLL Celulares</a>
+    <a href="https://mborexwin.github.io/MborexOnly/" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="300">🛍️ Mi Tienda personal</a>
+    <a href="https://go.hotmart.com/J95486940G" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="600">📘 Mi libro</a>
+    <a href="https://wa.me/595975147304?text=Hola, Quiero contratar tu servicio de crar pagina web" 
+   target="_blank" 
+   class="link-button" 
+   data-aos="zoom-in-down" 
+   data-aos-delay="600">
+   💬 Contacto Directo
+</a>
+    <footer data-aos="zoom-in-down" data-aos-delay="800">
+      <p>© 2025 Elías Espínola | Todos los derechos reservados</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
