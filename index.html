@@ -5,87 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Elías Espínola | Portafolio</title>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: url('you fondo.jpg') no-repeat center center fixed;
       background-size: cover;
       text-align: center;
-      padding: 30px;
     }
 
-    /* Capa oscura encima del fondo */
+    /* Capa oscura encima del fondo */  
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.644);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 0;
     }
-    img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 15px;
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
     }
 
-    h1 {
+    /* Foto de perfil redonda */
+    .profile-pic {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #fff;
+    }
+
+    h1, h2 {
       margin: 10px 0;
-      font-size: 28px;
+      font-size: 34px;
       color: #ffffff;
     }
 
     p {
-      color: #ffffff;
+      color: #cccccc;
       margin-bottom: 30px;
+      font-size: 18px;
     }
 
-    .link-button {
-      display: block;
-      background: #0077ff9d;
-      color: white;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
+    .projects, .flyers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95); /* Más blanco, menos transparente */
+      border-radius: 12px;
+      padding: 20px;
+      color: #222;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s;
+      transition: transform 0.3s, background 0.3s;
     }
 
-    .link-button:hover {
+    .card:hover {
+      transform: translateY(-5px);
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #111;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* Estilo para los flyers (sin forma, rectángulos) */
+    .flyer {
+      background: #fff;
+      border-radius: 0; /* Sin esquinas redondeadas */
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .flyer:hover {
       transform: scale(1.05);
-      background: #005edb;
+    }
+
+    .flyer img {
+      width: 100%;
+      height: auto; /* mantiene proporción */
+      object-fit: cover;
+      display: block;
+      border-radius: 0; /* aseguramos que la imagen no tenga bordes redondeados */
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 14px;
-      color: #ffffff;
+      color: #ffffffb7;
     }
   </style>
 </head>
 <body>
   <div class="container" data-aos="fade-up">
-    <img src="yo mborex.jpg" alt="Foto de Elías">
-    <h1>PROYECTOS</h1>
-    <p>Portafolio Personal</p>
+    <img src="yo mborex.jpg" alt="Foto de Elías" class="profile-pic">
+    <h1>Elías Espínola</h1>
+    <p>PROYECTOS</p>
 
-    <a href="sobre mi.html" class="link-button" data-aos="zoom-in-down" data-aos-delay="750">👤 Sobre mí</a>
-    <a href="https://maluco-stack.github.io/maluco/prendas.html" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="0">🧢 Ver Tienda Maluco</a>
-    <a href="https://fllcelulares.github.io/FLLL/" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="150">📱 Ver FLL Celulares</a>
-    <a href="https://mborexwin.github.io/MborexOnly/" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="300">🛍️ Mi Tienda personal</a>
-    <a href="https://go.hotmart.com/J95486940G" target="_blank" class="link-button" data-aos="zoom-in-down" data-aos-delay="600">📘 Mi libro</a>
-    <a href="https://wa.me/595975147304?text=Hola, Quiero contratar tu servicio de crear una pagina web o estilo dropshiping" 
-   target="_blank" 
-   class="link-button" 
-   data-aos="zoom-in-down" 
-   data-aos-delay="600">
-   💬 Contacto Directo
-</a>
-    <footer data-aos="zoom-in-down" data-aos-delay="800">
+    <!-- Sección proyectos -->
+    <div class="projects">
+      <a href="https://maluco-stack.github.io/maluco/prendas.html" target="_blank" class="card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>🧢 Tienda Maluco</h3>
+        <p>E-commerce de moda con diseño moderno y minimalista.</p>
+      </a>
+
+      <a href="https://fllcelulares.github.io/FLLL/" target="_blank" class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>📱 FLL Celulares</h3>
+        <p>Tienda online de celulares y accesorios.</p>
+      </a>
+
+      <a href="https://mborexwin.github.io/MborexOnly/" target="_blank" class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>🛍️ Mi Tienda Personal</h3>
+        <p>Proyecto propio con productos digitales y físicos.</p>
+      </a>
+
+      <a href="https://go.hotmart.com/J95486940G" target="_blank" class="card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>📘 Mi Libro</h3>
+        <p>Desarrollo personal.</p>
+      </a>
+
+      <a href="https://wa.me/595975147304?text=Hola, Quiero contratar tu servicio de crear pagina web" 
+         target="_blank" class="card" data-aos="zoom-in" data-aos-delay="500">
+        <h3>💬 Contacto</h3>
+        <p>Escríbeme directamente por WhatsApp.</p>
+      </a>
+
+      <!-- Nuevo botón: Comunidad Six Money -->
+      <a href="https://mborexwin.github.io/sixmoney/" target="_blank" class="card" data-aos="zoom-in" data-aos-delay="600">
+        <h3>〽️ Six Money</h3>
+        <p>Únete a nuestra comunidad de motivación y trading.</p>
+      </a>
+    </div>
+
+    <!-- Sección flyers -->
+    <h2 data-aos="fade-up">Diseños</h2>
+    <div class="flyers">
+      <div class="flyer" data-aos="flip-left" data-aos-delay="100">
+        <img src="Captura de pantalla 2025-09-19 223222.png" alt="Flyer 1">
+      </div>
+      <div class="flyer" data-aos="flip-left" data-aos-delay="200">
+        <img src="Captura de pantalla 2025-09-19 223249.png" alt="Flyer 2">
+      </div>
+      <div class="flyer" data-aos="flip-left" data-aos-delay="300">
+        <img src="Captura de pantalla 2025-09-19 223444.png" alt="Flyer 3">
+      </div>
+      <div class="flyer" data-aos="flip-left" data-aos-delay="400">
+        <img src="Captura de pantalla 2025-09-19 223507.png" alt="Flyer 4">
+      </div>
+    </div>
+
+    <footer data-aos="fade-up" data-aos-delay="600">
       <p>© 2025 Elías Espínola | Todos los derechos reservados</p>
     </footer>
   </div>
@@ -99,7 +184,6 @@
   </script>
 </body>
 </html>
-
 
 
 
