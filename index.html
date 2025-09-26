@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio RPG - Mborex</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #f1f1f1;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      position: relative;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.15);
+      overflow: hidden;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #00ffc8;
+      border-bottom: 1px solid #00ffc8;
+      padding-bottom: 5px;
+    }
+
+    .avatar {
+      text-align: center;
+    }
+
+    .avatar img {
+      width: 320px;
+      height: 330px;
+      border-radius: 50%;
+      border: 3px solid #00ffc8;
+    }
+
+    .section {
+      margin: 20px 0;
+      position: relative;
+      z-index: 2; /* Para que el contenido esté sobre el canvas Matrix */
+    }
+
+    /* Estilo para los botones */
+    .stats-buttons, .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stats-buttons a, .social-buttons a {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background: linear-gradient(90deg, #00ffc8, #0077ff);
+      color: #0d0d0d;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .stats-buttons a:hover, .social-buttons a:hover {
+      background: linear-gradient(90deg, #0077ff, #00ffc8);
+      transform: scale(1.05);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    canvas.matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Panel izquierdo -->
+    <div class="card">
+      <!-- Canvas Matrix de fondo -->
+      <canvas id="matrixCanvas" class="matrix-bg"></canvas>
+
+      <div class="avatar section">
+        <img src="logo.jpg" alt="Avatar">
+        <h2>Elías - Lv. 23</h2>
+        <p><strong>Rol:</strong> Proyectos Activos</p>
+      </div>
+
+ <!-- Proyectos -->
+<div class="section">
+  <h2>Proyectos</h2>
+  <div class="stats-buttons" style="display: flex; flex-direction: column; gap: 10px;">
+
+    <a href="https://tu-link-jlbarber.com" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #FF6347; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/scissors.png" alt="JL Barber"> JL Barber
+    </a>
+
+    <a href="https://tu-link-sixmoney.com" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #32CD32; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/money.png" alt="Six Money Team"> Six Money Team
+    </a>
+
+    <a href="https://tu-link-maluco.com" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #FF4500; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/fire-element.png" alt="Maluco"> Maluco
+    </a>
+
+    <a href="https://tu-link-fllcelulares.com" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #1E90FF; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/smartphone-tablet.png" alt="FLL Celulares"> FLL Celulares
+    </a>
+
+    <a href="https://tu-link-mborexwin.com" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #FF8C00; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/shopping-cart.png" alt="Mborex Win"> Mborex Win
+    </a>
+
+    <a href="diseño.html" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #8A2BE2; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://img.icons8.com/ios-filled/24/paint-palette.png" alt="Diseños"> Diseños
+    </a>
+
+  </div>
+</div>
+
+<!-- Redes sociales -->
+<div class="section">
+  <h2>Redes Sociales</h2>
+  <div class="social-buttons" style="display: flex; flex-direction: column; gap: 10px;">
+
+    <a href="https://www.instagram.com/tuusuario" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #E1306C; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:24px; height:24px;"> Instagram
+    </a>
+
+    <a href="https://www.linkedin.com/in/tuusuario" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #0A66C2; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:24px; height:24px;"> LinkedIn
+    </a>
+
+    <a href="https://www.tiktok.com/@tuusuario" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #000000; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" style="width:24px; height:24px;"> TikTok
+    </a>
+
+    <a href="https://wa.me/tu-numero" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #25D366; color: white; text-decoration: none; border-radius: 5px; width: 100%;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:24px; height:24px;"> WhatsApp
+    </a>
+
+  </div>
+</div>
+
+
+  </div>
+    <!-- Panel derecho -->
+    <div class="card">
+      <h2>Gráfico de Habilidades</h2>
+      <canvas id="radarChart"></canvas>
+
+      <div class="section">
+  <h2>Intentalo! </h2>
+  <canvas id="flappyCanvas" style="width:100%; height:200px; background:#0d0d0d00; border-radius:8px;"></canvas>
+</div>
+
+<script>
+const canvasF = document.getElementById('flappyCanvas');
+const ctxF = canvasF.getContext('2d');
+canvasF.width = canvasF.offsetWidth;
+canvasF.height = canvasF.offsetHeight;
+
+let bird = { x: 50, y: 100, radius: 12, dy: 0, gravity: 0.6, jump: -10 };
+let pipes = [];
+let frameF = 0;
+let gameSpeedF = 2;
+
+function spawnPipe() {
+  const gap = 60;
+  const height = Math.random() * (canvasF.height - gap - 40) + 20;
+  pipes.push({ x: canvasF.width, y: height, width: 20, gap: gap });
+}
+
+function updateFlappy() {
+  ctxF.clearRect(0,0,canvasF.width,canvasF.height);
+
+  // Bird
+  bird.dy += bird.gravity;
+  bird.y += bird.dy;
+  if(bird.y + bird.radius > canvasF.height) { bird.y = canvasF.height - bird.radius; bird.dy = 0; }
+
+  ctxF.fillStyle = '#00ffc8';
+  ctxF.beginPath();
+  ctxF.arc(bird.x, bird.y, bird.radius, 0, Math.PI*2);
+  ctxF.fill();
+
+  // Pipes
+  if(frameF % 120 === 0) spawnPipe();
+  pipes.forEach((p, i) => {
+    p.x -= gameSpeedF;
+    ctxF.fillStyle = '#ff0077';
+    ctxF.fillRect(p.x, 0, p.width, p.y);
+    ctxF.fillRect(p.x, p.y + p.gap, p.width, canvasF.height - p.y - p.gap);
+
+    // Colisión
+   if(bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + p.width &&
+   (bird.y - bird.radius < p.y || bird.y + bird.radius > p.y + p.gap)) {
+  // Reinicia obstáculos y posición del pájaro sin alert
+  pipes = [];
+  bird.y = 100;
+  bird.dy = 0;
+  frameF = 0;
+}
+
+    if(p.x + p.width < 0) pipes.splice(i,1);
+  });
+
+  frameF++;
+  requestAnimationFrame(updateFlappy);
+}
+updateFlappy();
+
+document.addEventListener('keydown', e => {
+  if(e.code === 'Space') bird.dy = bird.jump;
+});
+canvasF.addEventListener('click', () => bird.dy = bird.jump);
+</script>
+
+<script>
+  // MATRIX
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  const letters = '0123456789';
+  const fontSize = 16;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(0).map(() => Math.random() * canvas.height);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(13,13,13,0.15)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00ffb0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i]);
+      drops[i] += fontSize;
+      if (drops[i] > canvas.height) drops[i] = 0;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+
+  // RADAR CHART
+  const radarCtx = document.getElementById('radarChart');
+  new Chart(radarCtx, {
+    type: 'radar',
+    data: {
+      labels: ['Creatividad', 'Programación', 'Blockchain', 'Diseño', 'Marketing', 'Comunicación'],
+      datasets: [{
+        label: 'Habilidades',
+        data: [90, 78, 85, 85, 90, 80],
+        fill: true,
+        backgroundColor: 'rgba(0, 255, 200, 0.25)',
+        borderColor: '#00ffc8',
+        borderWidth: 2,
+        pointBackgroundColor: ['#00ffc8','#00ffc8','#00ffc8','#00ffd0','#00ffd0','#00ffc8'],
+        pointBorderColor: ['#00ffc8','#00ffc8','#00ffc8','#00ffd0','#00ffd0','#00ffc8'],
+        pointRadius: [5,5,5,8,8,5],
+        pointHoverRadius: [7,7,7,10,10,7],
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#00ffc8', font: { weight: 'bold' } } } },
+      scales: {
+        r: {
+          angleLines: { color: '#444' },
+          grid: { color: '#333' },
+          pointLabels: { color: '#fff', font: { size: 14, weight: 'bold' } },
+          ticks: { color: '#fff', beginAtZero: true, max: 100, stepSize: 20 }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
+
